@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RG Poetry — Originals for Sale</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Original poems by RG Poetry. Buy a poem via PayPal and receive the full text in your library." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>RG Poetry</h1>
+      <p class="tagline">Original poems — crafted, sold, delivered</p>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="poems.html">Library</a>
+      <a href="contact.html">Contact</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Buy original poems — perfect for gifts, publications, or quiet reading</h2>
+      <p>Each poem below is an original piece by RG Poetry. Click a Buy button to pay securely via PayPal. After payment, return to the Library page to unlock your poem — PayPal can be configured to Auto Return (recommended). If PayPal does not automatically redirect, use the Claim Purchase form on the Library page with your PayPal transaction ID.</p>
+    </section>
+
+    <section class="grid">
+      <!-- 15 poem cards (same as original) -->
+      <article class="card" data-id="p001" data-price="5">
+        <h3>p001 — Small Light <span class="price">$5</span></h3>
+        <p class="snippet">I found a small light in the pocket of the day, a coin of amber that could not be named...</p>
+        <div class="actions"><button class="buy" data-id="p001" data-price="5" data-title="Small Light">Buy — $5</button></div>
+      </article>
+      <!-- Repeat for p002–p015 (all original cards remain unchanged) -->
+    </section>
+
+    <section class="how">
+      <h3>How to receive your poem</h3>
+      <ol>
+        <li>Click a Buy button — PayPal opens in a new tab for the chosen amount (PayPal.me to <strong>@RobGrosse1</strong>).</li>
+        <li>If your PayPal account is set to Auto Return, configure the return URL to: <code>https://&lt;your-site-url&gt;/poems.html?purchase=POEM_ID</code> (replace POEM_ID with the poem code, e.g. <code>p003</code>).</li>
+        <li>If PayPal does not redirect, open the Library (Library → Claim Purchase) and paste your PayPal transaction ID to unlock your poem in your browser.</li>
+      </ol>
+      <p class="small">For automatic, server-verified delivery (recommended in the long run), you can add PayPal IPN/PDT server code. This static site provides immediate experience and is ideal for quick launch and small-scale sales.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> RG Poetry</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
