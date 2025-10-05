@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library — Robert Grosse Poetry</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1>Robert Grosse Poetry</h1>
+      <p class="tagline">Your purchased poems live here</p>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="poems.html">Library</a>
+      <a href="contact.html">Contact</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="library-intro">
+      <h2>Your Library</h2>
+      <p>If you've completed a PayPal payment and were returned with <code>?purchase=POEM_ID</code> in the URL, your poem will be unlocked automatically. If not, enter your PayPal transaction ID below to claim your purchase. Unlocks are stored in your browser (localStorage).</p>
+    </section>
+
+    <section class="claim">
+      <h3>Claim Purchase</h3>
+      <form id="claimForm">
+        <label for="poemId">Poem ID (example: <code>p001</code>)</label>
+        <input id="poemId" name="poemId" required placeholder="p001" />
+        <label for="txnId">PayPal Transaction ID</label>
+        <input id="txnId" name="txnId" required placeholder="e.g. 8X12345ABC6789012" />
+        <button type="submit" class="claim-btn">Claim Purchase</button>
+      </form>
+      <div id="claimMessage" class="claim-message" aria-live="polite"></div>
+    </section>
+
+    <section id="unlocked" class="unlocked">
+      <!-- Unlocked poems will render here -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Robert Grosse Poetry</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // initialize library page (scripts.js exposes initLibraryPage)
+    if (window.initLibraryPage) window.initLibraryPage();
+  </script>
+</body>
+</html>
